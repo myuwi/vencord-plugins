@@ -1,4 +1,4 @@
-/* eslint-disable header/header */
+/* eslint-disable simple-header/header */
 import definePlugin from "@utils/types";
 
 export default definePlugin({
@@ -12,10 +12,10 @@ export default definePlugin({
     ],
     patches: [
         {
-            find: '"ctrl+shift+tab","ctrl+tab",',
+            find: "Duplicate keyboard shortcuts defined:",
             replacement: {
-                match: '"ctrl+shift+tab","ctrl+tab",',
-                replace: "",
+                match: "!c.isPlatformEmbedded",
+                replace: "false",
             },
         },
     ],

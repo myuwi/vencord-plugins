@@ -1,4 +1,4 @@
-/* eslint-disable header/header */
+/* eslint-disable simple-header/header */
 import definePlugin from "@utils/types";
 
 export default definePlugin({
@@ -22,7 +22,7 @@ export default definePlugin({
                 },
                 {
                     // Remove notification count badge and replace last "|" with "-"
-                    match: /,\i=function\(\i\){.{0,9}\i\.notificationCount;.*?.concat\((\i)\),/,
+                    match: /,\i=function\(\i\)\{.{0,9}notificationCount:\i.*?.concat\((\i)\),/,
                     replace: '.replace(/\\|(?=[^|]*$)/, "-");return[$1,',
                 },
             ],
