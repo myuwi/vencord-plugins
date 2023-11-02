@@ -14,7 +14,7 @@ export default definePlugin({
         {
             find: "Duplicate keyboard shortcuts defined:",
             replacement: {
-                match: "!c.isPlatformEmbedded",
+                match: /!\i\.isPlatformEmbedded/,
                 replace: "false",
             },
         },
