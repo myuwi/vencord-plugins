@@ -21,9 +21,14 @@ export default definePlugin({
                     replace: "return[$2,$3,$1]",
                 },
                 {
-                    // Remove notification count badge and replace last "|" with "-"
-                    match: /,\i=function\(\i\)\{.{0,9}notificationCount:\i.*?.concat\((\i)\),/,
-                    replace: '.replace(/\\|(?=[^|]*$)/, "-");return[$1,',
+                    // Replace last "|" with "-"
+                    match: /(join\(" \| "\))/,
+                    replace: '$1.replace(/\\|(?=[^|]*$)/, "-")',
+                },
+                {
+                    // Remove notification count badge
+                    match: /,\i=function\(\i\)\{.{0,9}notificationCount:\i.*?\.concat\((\i)\),/,
+                    replace: ";return[$1,",
                 },
             ],
         },
