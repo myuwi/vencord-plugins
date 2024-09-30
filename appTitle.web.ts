@@ -27,8 +27,8 @@ export default definePlugin({
                 },
                 {
                     // Remove notification count badge
-                    match: /,\i=function\(\i\)\{.{0,9}notificationCount:\i.*?\.concat\((\i)\),/,
-                    replace: ";return[$1,",
+                    match: /(function \i\(\i\)\{)let{notificationCount:\i}.*?}/,
+                    replace: '$1return ""}',
                 },
             ],
         },
